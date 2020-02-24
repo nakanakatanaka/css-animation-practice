@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Intro to CSS Animations</title>
+
+    <style>
+      body {
+        padding: 50px;
+      }
+      #container {
+        padding: 20px;
+        width: 100%;
+        height: 250px;
+        background-color: #EEE;
+        text-align: center;
+      }
+      /* 
+        対象にanimationプロパティを設定(STEP1)
+        アニメーションの名前、持続期間、ループする回数を設定
+       */
+      #hexagon {
+        animation: bobble 2s infinite;
+      }
+      /* 
+        keyframsでいつどのようにアニメーションするかを定義(STEP2)
+        animationプロパティでつけた名前を指定する
+        0% -> アニメーションの始まり(0s)
+        50% -> midway point(durationに2sを指定しているため、1s)
+        100% -> アニメーションの終わり(durationに2sを指定しているため、2s)
+      */
+      @keyframes bobble {
+        0% {
+          transform: translateY(10px);
+        }
+        50% {
+          transform: translateY(40px);
+        }
+        100% {
+          transform: translateY(10px);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div
+      id="container"
+    >
+      <img
+        id="hexagon"
+        src="https://www.kirupa.com/images/hexagon.svg"
+        alt=""
+      >
+    </div>
+  </body>
+</html>
