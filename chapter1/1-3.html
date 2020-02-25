@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CSS Transitions!</title>
+
+    <style>
+      #container {
+        width: 100%;
+        height: 290px;
+        background-color: #EEE;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      /*
+      - ひとつめ 
+        - 効果が効いてほしいプロパティを指定する
+        - 全部のときはallを指定する
+      - ふたつめ
+        - どのくらいの時間で動くかを指定する
+      */
+      #hexagon {
+        transition: transform .1s;
+      }
+      /*
+      デフォルトの(1, 1, 1)から指定した(1.2, 1.2, 1)に変化する
+      */
+      #hexagon:hover {
+        transform: scale3d(1.2, 1.2, 1) rotate(45deg);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="container">
+      <img id="hexagon" src="https://www.kirupa.com/images/hexagon.svg" alt="smileyHexagon">
+    </div>
+  </body>
+</html>
